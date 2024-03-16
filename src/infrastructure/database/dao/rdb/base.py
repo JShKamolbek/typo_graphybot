@@ -27,7 +27,7 @@ class BaseDAO(Generic[Model]):
         adapter = TypeAdapter(List[Model])
         return adapter.validate_python(result.scalars().all())
 
-    async f _get_by_id(
+    async def _get_by_id(
             self,
             id_: int,
             options: list[Load] = None,
